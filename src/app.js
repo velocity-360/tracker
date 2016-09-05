@@ -9,6 +9,7 @@ class App extends Component {
 		super(props, context)
 		this.showLogin = this.showLogin.bind(this)
 		this.hideLogin = this.hideLogin.bind(this)
+		this.login = this.login.bind(this)
 		this.state = {
 			showModal: false
 		}
@@ -23,11 +24,7 @@ class App extends Component {
 		  databaseURL: 'https://reactfirebase-61fab.firebaseio.com'
 		})
 
-
 		// make an api request to your server to get unique id based on url
-		const ref = new Firebase('https://reactfirebase-61fab.firebaseio.com')
-
-
 	}
 
 	showLogin(event){
@@ -43,6 +40,20 @@ class App extends Component {
 		this.setState({
 			showModal: false
 		})
+	}
+
+	login(event){
+		event.preventDefault()
+		console.log('LOGIN')
+
+		const post = {
+			id: 5,
+			text: 'Does this work?'
+		}
+
+		firebase.database().ref('posts/'+post.id).set(post)
+
+
 	}
 
 	render(){

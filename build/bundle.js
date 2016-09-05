@@ -80,6 +80,7 @@
 	
 			_this.showLogin = _this.showLogin.bind(_this);
 			_this.hideLogin = _this.hideLogin.bind(_this);
+			_this.login = _this.login.bind(_this);
 			_this.state = {
 				showModal: false
 			};
@@ -98,7 +99,6 @@
 				});
 	
 				// make an api request to your server to get unique id based on url
-				var ref = new Firebase('https://reactfirebase-61fab.firebaseio.com');
 			}
 		}, {
 			key: 'showLogin',
@@ -115,6 +115,19 @@
 				this.setState({
 					showModal: false
 				});
+			}
+		}, {
+			key: 'login',
+			value: function login(event) {
+				event.preventDefault();
+				console.log('LOGIN');
+	
+				var post = {
+					id: 5,
+					text: 'Does this work?'
+				};
+	
+				_firebase2.default.database().ref('posts/' + post.id).set(post);
 			}
 		}, {
 			key: 'render',
