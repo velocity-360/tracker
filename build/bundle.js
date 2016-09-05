@@ -85,7 +85,7 @@
 		_createClass(App, [{
 			key: 'componentDidMount',
 			value: function componentDidMount() {
-				console.log('componentDidMount: ');
+				console.log('componentDidMount: ' + window.location.href);
 			}
 		}, {
 			key: 'showLogin',
