@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import { Modal } from 'react-bootstrap'
+import firebase from 'firebase'
 
 class App extends Component {
 
@@ -15,6 +16,17 @@ class App extends Component {
 
 	componentDidMount(){
 		console.log('componentDidMount: '+window.location.href)
+		const path = ''
+
+		firebase.initializeApp({
+		  serviceAccount: path,
+		  databaseURL: 'https://reactfirebase-61fab.firebaseio.com'
+		})
+
+
+		// make an api request to your server to get unique id based on url
+		const ref = new Firebase('https://reactfirebase-61fab.firebaseio.com')
+
 
 	}
 
@@ -49,7 +61,6 @@ class App extends Component {
 						</div>
 			        </Modal.Body>
 		        </Modal>
-
 			</div>
 		)
 	}
