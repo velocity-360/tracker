@@ -78,12 +78,16 @@
 			_this.hideLogin = _this.hideLogin.bind(_this);
 			_this.state = {
 				showModal: false
-	
 			};
 			return _this;
 		}
 	
 		_createClass(App, [{
+			key: 'componentDidMount',
+			value: function componentDidMount() {
+				console.log('componentDidMount: ');
+			}
+		}, {
 			key: 'showLogin',
 			value: function showLogin(event) {
 				event.preventDefault();

@@ -10,8 +10,12 @@ class App extends Component {
 		this.hideLogin = this.hideLogin.bind(this)
 		this.state = {
 			showModal: false
-
 		}
+	}
+
+	componentDidMount(){
+		console.log('componentDidMount: ')
+
 	}
 
 	showLogin(event){
