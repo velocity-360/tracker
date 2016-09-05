@@ -90,7 +90,7 @@
 			key: 'componentDidMount',
 			value: function componentDidMount() {
 				console.log('componentDidMount: ' + window.location.href);
-				var path = '';
+				var path = 'https://raw.githubusercontent.com/velocity-360/tracker/master/shared/firebase/ReactFirebase-ee39d2b350c5.json';
 	
 				_firebase2.default.initializeApp({
 					serviceAccount: path,

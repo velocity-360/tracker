@@ -16,7 +16,7 @@ class App extends Component {
 
 	componentDidMount(){
 		console.log('componentDidMount: '+window.location.href)
-		const path = ''
+		const path = 'https://raw.githubusercontent.com/velocity-360/tracker/master/shared/firebase/ReactFirebase-ee39d2b350c5.json'
 
 		firebase.initializeApp({
 		  serviceAccount: path,
